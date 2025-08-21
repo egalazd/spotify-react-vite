@@ -1,9 +1,11 @@
+import 'dotenv/config';  
 import express from "express";
 import cors from "cors";
-import dotenv from "dotenv";
 import spotifyRoutes from "./routes/spotify.js";
 
-dotenv.config();
+console.log(process.env.SPOTIFY_CLIENT_ID, process.env.SPOTIFY_CLIENT_SECRET);
+
+
 const app = express();
 const PORT = process.env.PORT || 5000;
 
