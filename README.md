@@ -1,27 +1,31 @@
-# Spotify React Vite
+# Spotify App (Vite + React + Express)
 
-## Configuración
+## Estructura
+- client/: React + Vite
+- server/: Express + Spotify API (Client Credentials)
 
-1. Copia `.env.example` a `.env` y completa tus datos:
-   ```
-   SPOTIFY_CLIENT_ID=TU_CLIENT_ID
-   SPOTIFY_CLIENT_SECRET=TU_CLIENT_SECRET
-   REDIRECT_URI=http://localhost:5173
-   ```
+## Variables de entorno
+- server/.env
+```
+PORT=5000
+SPOTIFY_CLIENT_ID=localhe66005cdcfd74a33aca9577f921af3fcost
+SPOTIFY_CLIENT_SECRET=sdfg5s1ccd5cbf8b4b4d4382deda8c7fb16d374d6f5545
+```
+- client/.env
+```
+VITE_API_URL=http://localhost:5000
+```
 
-2. Instala dependencias:
-   ```bash
-   npm install
-   ```
+## Cómo ejecutar
+```bash
+# Backend
+cd server
+npm install
+npm run dev
 
-3. Inicia el backend:
-   ```bash
-   npm run server
-   ```
-
-4. Inicia el frontend:
-   ```bash
-   npm run dev
-   ```
-
-5. Despliega en **Vercel** y configura las variables de entorno.
+# Frontend
+cd ../client
+npm install
+npm run dev
+```
+Abrir: http://localhost:5173

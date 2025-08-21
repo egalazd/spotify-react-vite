@@ -1,30 +1,17 @@
-import express from 'express';
-import fetch from 'node-fetch';
-import dotenv from 'dotenv';
-import cors from 'cors';
+import express from "express";
+import cors from "cors";
+import dotenv from "dotenv";
+import spotifyRoutes from "./routes/spotify.js";
 
 dotenv.config();
 const app = express();
+const PORT = process.env.PORT || 5000;
+
 app.use(cors());
+app.use(express.json());
 
-app.get('/api/token', async (req, res) => {
-  try {
-    const auth = Buffer.from(`${process.env.SPOTIFY_CLIENT_ID}:${process.env.SPOTIFY_CLIENT_SECRET}`).toString('base64');
-    const response = await fetch('https://accounts.spotify.com/api/token', {
-      method: 'POST',
-      headers: {
-        'Authorization': `Basic ${auth}`,
-        'Content-Type': 'application/x-www-form-urlencoded',
-      },
-      body: 'grant_type=client_credentials',
-    });
-    const data = await response.json();
-    res.json(data);
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: 'Error fetching token' });
-  }
-});
+app.use("/api/spotify", spotifyRoutes);
 
-const PORT = process.env.PORT || 3001;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+app.get("/", (_req, res) => res.send("Spotify Backend OK"));
+
+app.listen(PORT, () => console.log(`✅ Backend running on http://localhost:${PORT}`));

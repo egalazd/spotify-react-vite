@@ -1,0 +1,10 @@
+:root{color-scheme:dark;--bg:#0f172a;--panel:#111827;--text:#e5e7eb;--muted:#9ca3af;--accent:#22c55e}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,Arial,sans-serif;background:radial-gradient(1200px 600px at -20% -10%,#1f2937,transparent),var(--bg);color:var(--text)}
+.app{max-width:1080px;margin:0 auto;padding:24px}header h1{font-size:40px;margin:0 0 4px}header p{margin:0 0 20px;color:var(--muted)}
+section{margin:20px 0;background:var(--panel);padding:16px;border-radius:16px}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:16px}
+.card{background:#0b1220;border:1px solid #1f2937;border-radius:16px;padding:12px;transition:.2s;cursor:pointer}.card:hover{transform:translateY(-2px);border-color:#334155}
+.card img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:12px}.title{font-weight:700;margin:8px 0 2px}.artist{color:var(--muted);font-size:14px;margin:0 0 8px}
+.btn{background:var(--accent);color:#052e16;border:none;padding:8px 12px;border-radius:10px;font-weight:700;cursor:pointer}
+.search{display:flex;gap:8px}.search input{flex:1;padding:12px 14px;border-radius:12px;border:1px solid #1f2937;background:#0b1220;color:var(--text)}
+.search button{padding:12px 16px;border-radius:12px;background:var(--accent);color:#052e16;font-weight:700;border:none;cursor:pointer}
+.nowplaying{display:flex;gap:16px;align-items:center}.nowplaying img{width:64px;height:64px;border-radius:8px}
